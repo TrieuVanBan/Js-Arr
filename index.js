@@ -1,9 +1,9 @@
 // Function Object
 console.log(
-  "-----------------------------String-------------------------------"
+    "-----------------------------String-------------------------------"
 );
 const string =
-  "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?";
+    "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?";
 
 //charAt():  là một phương thức trả về ký tự từ chỉ mục được chỉ định.
 console.log("charAt = ", string.charAt(8));
@@ -18,8 +18,8 @@ console.log("concat = ", string.concat(" ", string2));
 //includes(): để xác định xem một chuỗi có thể được tìm thấy trong một chuỗi khác hay không.
 const string3 = "text1";
 console.log(
-  "includes = ",
-  `The word "${string3}" ${
+    "includes = ",
+    `The word "${string3}" ${
     string.includes(string3) ? "is" : "is not"
   } in the sentence`
 );
@@ -47,13 +47,13 @@ console.log("trimStart = ", str2.trimStart());
 //trimEnd() loại bỏ khoảng trắng từ cuối chuỗi.
 console.log("trimEnd = ", str2.trimEnd());
 
-//trim() loại bỏ khoảng trắng từ cuối chuỗi.
+//trim() loại bỏ khoảng trắng từ đầu và cuối chuỗi.
 console.log("trim = ", str2.trim());
 
-//replace() tìm kiếm vào thay thế trên 1 chuỗi, Chỉ thay đổi chuỗi đầu tiên tìm thấy
+//replace() tìm kiếm và thay thế trên 1 chuỗi, Chỉ thay đổi chuỗi đầu tiên tìm thấy
 console.log("replace = ", string.replace("dog", "cat"));
 
-//replaceAll() tìm kiếm vào thay thế trên tất cả trên 1 chuỗi.
+//replaceAll() tìm kiếm và thay thế trên tất cả trên 1 chuỗi.
 console.log("replaceAll = ", string.replaceAll("dog", "cat"));
 
 //substring() sẽ tìm kiếm chính xác một chuỗi ký tự, có 2 tham số : indexStart(vị trí bắt đầu) và indexEnd(vị trí kết thúc). (tham số thứ 2 không bắt buộc).
@@ -76,60 +76,62 @@ var index = email.indexOf("@");
 console.log("indexOf = ", index);
 
 console.log(
-  "-----------------------------Array-------------------------------"
+    "-----------------------------Array-------------------------------"
 );
 
 // some() kiểm tra mảng với một hàm được truyền dưới dạng tham số. Trả về true nếu đúng và false nếu sai
 const myAwesomeArray = ["a", "b", "c", "d", "e"];
 console.log(
-  "some = ",
-  myAwesomeArray.some((item) => item === "d")
+    "some = ",
+    myAwesomeArray.some((item) => item === "d")
 );
 
 // reduce() này nhận một hàm có bộ tích lũy là đối số đầu tiên và giá trị làm đối số thứ hai.
 const arrNumber = [1, 2, 3, 4, 5, 6];
 const a = arrNumber.reduce((total, value) => {
-  return total * value;
+    return total * value;
 }, 2);
 console.log("reduce = ", a);
 
 // every() này kiểm tra mảng với một hàm được truyền dưới dạng tham số.
 const arrEvery = ["a", "a", "a", "a", "a"];
 const arrEvery1 = arrEvery.every((item) => {
-  return item === "a";
+    return item === "a";
 });
 console.log("every = ", arrEvery1);
 
 // map() này nhận một hàm làm tham số. Và trả về một mảng mới.
 const arrMap = arrNumber.map((item) => {
-  return item + item;
+    return item + item;
 });
 console.log("map = ", arrMap);
 
 // flat() này thường được sử dụng để tạo ra một mảng mới chứa các phần tử trong mảng (mà có chứa mảng con)
-const arrFlat = [[1, 2], [3, 4], 5];
+const arrFlat = [
+    [1, 2],
+    [3, 4], 5
+];
 console.log("flat = ", arrFlat.flat());
 
 //filter() này nhận một hàm làm tham số. Và trả về một mảng mới.
-const arrName = [
-  {
-    name: "Ban",
-    age: 21,
-  },
-  {
-    name: "Nam",
-    age: 10,
-  },
+const arrName = [{
+        name: "Ban",
+        age: 21,
+    },
+    {
+        name: "Nam",
+        age: 10,
+    },
 ];
 const arrFilter = arrName.filter((item) => {
-  return item.name === "Nam";
+    return item.name === "Nam";
 });
 console.log("filter = ", arrFilter);
 
 //forEach() dùng để duyệt qua từng phần tử của mảng
 const array = ["a", "b", "c"];
-array.forEach(function (element) {
-  console.log("forEach = ", element);
+array.forEach(function(element) {
+    console.log("forEach = ", element + "#");
 });
 
 console.log("forEach = ", array);
@@ -173,56 +175,57 @@ console.log("reverse = ", arrReverse.reverse());
 var numbers = [1, 2, 3, 4];
 console.log("fill = ", numbers.fill(22, 1, 3)); // [1, 22, 22, 4]
 
-// sort() Nó sắp xếp các phần tử của một mảng, và thay đổi mảng gốc
+// sort() Nó sắp xếp các phần tử của một mảng tăng dần hoặc giảm dần, và thay đổi mảng gốc
 const arrSort = [5, 4, 3, 2, 1];
 
 // Sắp xếp từ Nhỏ nhất đến Lớn nhất
 console.log(
-  "sort = ",
-  arrSort.sort((a, b) => a - b)
+    "sort = ",
+    arrSort.sort((a, b) => a - b)
 ); //-------> Kết quả : [1, 2, 3, 4, 5]
 
 // Sắp xếp từ Lớn nhất đến Nhỏ nhất
 console.log(
-  "sort = ",
-  arrSort.sort((a, b) => b - a)
+    "sort = ",
+    arrSort.sort((a, b) => b - a)
 ); //-------> Kết quả : [5, 4, 3, 2, 1]
 
 // find() Nó trả về giá trị của một phần tử được tìm thấy trong mảng và thỏa mãn hàm kiểm tra. Nếu không, nó trả về undefined.
 const myArr = [
-  { id: 1, name: "Hải" },
-  { id: 2, name: "Doanh" },
-  { id: 3, name: "Việt" },
+    { id: 1, name: "Hải" },
+    { id: 2, name: "Doanh" },
+    { id: 3, name: "Việt" },
 ];
 
 console.log(
-  "find = ",
-  myArr.find((element) => element.id === 3)
+    "find = ",
+    myArr.find((element) => element.id === 3)
 ); //-------> Kết quả : {id: 3, name: "Việt"}
 
 console.log(
-  "find = ",
-  myArr.find((element) => element.id === 7)
+    "find = ",
+    myArr.find((element) => element.id === 7)
 ); //-------> Kết quả : undefined
 
 //  findIndex() Nó trả về chỉ mục của một phần tử được tìm thấy và thỏa mãn hàm
 const arrIndex = [
-  { id: 1, name: "Hải" },
-  { id: 2, name: "Doanh" },
-  { id: 3, name: "Việt" },
+    { id: 1, name: "Hải" },
+    { id: 2, name: "Doanh" },
+    { id: 3, name: "Việt" },
 ];
 
 console.log(
-  "findIndex = ",
-  arrIndex.findIndex((element) => element.id === 3)
+    "findIndex = ",
+    arrIndex.findIndex((element) => element.id === 3)
 ); //-------> Kết quả : 2
 
 console.log(
-  "findIndex = ",
-  arrIndex.findIndex((element) => element.id === 7)
+    "findIndex = ",
+    arrIndex.findIndex((element) => element.id === 7)
 ); //-------> Kết quả : -1
 
 // -------------------------------------Câu 2 --------------------------------------------
+console.log("-------------------------------------Câu 2 --------------------------------------------");
 // So sánh 2 object
 console.log("So sánh: ");
 let x = {};
@@ -234,22 +237,51 @@ console.log(y === x); // true
 
 let c = {};
 let b = {}; // khởi tạo object độc lập
-
 console.log(b == c); // false
 console.log(b === c); // false
 // false vì không cùng 1 tham chiếu đến 1 địa chỉ
 
+let e = { k: 1, j: 'kal' }
+let f = { k: 1, j: 'kal' }
+
+console.log(e == f); // false
+console.log(e === f); // false
+
+function test(obj1, obj2) {
+    const keys1 = Object.keys(obj1);
+    const keys2 = Object.keys(obj2);
+
+    if (keys1.length !== keys2.length) {
+        console.log("False");
+        return false;
+    }
+
+    for (let key of keys1) {
+        if (obj1[key] !== obj2[key]) {
+            console.log("False");
+            return false;
+        }
+    }
+    console.log("True");
+    return true
+}
+test(e, f)
+
+
 // merge 2 object
 console.log("merge 2 object");
 const obj = { name: "Ban", age: 21 };
-const obj1 = { address: "Hả Dương" };
-const obj2 = { ...obj, ...obj1 };
+const obj1 = { address: "Hải Dương" };
+const obj2 = {...obj, ...obj1 };
 console.log(obj2);
 
 // Thêm 1 thuộc tính vào obj
 console.log("Thêm 1 thuộc tính vào obj");
 const addObj = { name: "Ban", age: 21 };
-addObj.email = "bannshd@gmail.com";
+// Thêm obj kiểu 1
+addObj.address = "Hải Dương";
+// Thêm obj kiểu 2 (typescript)
+addObj['email'] = "bannshd@gmail.com";
 console.log(addObj);
 
 // Xóa
